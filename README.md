@@ -1,1 +1,1 @@
-Only for personal test purpose!!
+For personal study and testing purposes only!!
