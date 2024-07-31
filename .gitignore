@@ -178,3 +178,5 @@ pyrightconfig.json
 api/.vscode
 
 .idea/
+
+CONTRIBUTING_CN.md

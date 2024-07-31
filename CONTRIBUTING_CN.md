@@ -12,50 +12,51 @@
 
 ### 功能请求：
 
-* 如果您要提出新的功能请求，请解释所提议的功能的目标，并尽可能提供详细的上下文。[@perzeusss](https://github.com/perzeuss) 制作了一个很好的 [功能请求助手](https://udify.app/chat/MK2kVSnw1gakVwMX)，可以帮助您起草需求。随时尝试一下。
+- 如果您要提出新的功能请求，请解释所提议的功能的目标，并尽可能提供详细的上下文。[@perzeusss](https://github.com/perzeuss) 制作了一个很好的 [功能请求助手](https://udify.app/chat/MK2kVSnw1gakVwMX)，可以帮助您起草需求。随时尝试一下。
 
-* 如果您想从现有问题中选择一个，请在其下方留下评论表示您的意愿。
+- 如果您想从现有问题中选择一个，请在其下方留下评论表示您的意愿。
 
 相关方向的团队成员将参与其中。如果一切顺利，他们将批准您开始编码。在此之前，请不要开始工作，以免我们提出更改导致您的工作付诸东流。
 
 根据所提议的功能所属的领域不同，您可能需要与不同的团队成员交流。以下是我们团队成员目前正在从事的各个领域的概述：
 
-  | 团队成员                                                       | 工作范围                                                |
-  | ------------------------------------------------------------ | ---------------------------------------------------- |
-  | [@yeuoly](https://github.com/Yeuoly)                         | 架构 Agents                                  |
-  | [@jyong](https://github.com/JohnJyong)                       | RAG 流水线设计                                  |
-  | [@GarfieldDai](https://github.com/GarfieldDai)               | 构建 workflow 编排                     |
-  | [@iamjoel](https://github.com/iamjoel) & [@zxhlyh](https://github.com/zxhlyh) | 让我们的前端更易用                  |
-  | [@guchenhe](https://github.com/guchenhe) & [@crazywoola](https://github.com/crazywoola) | 开发人员体验, 综合事项联系人 |
-  | [@takatost](https://github.com/takatost)                     | 产品整体方向和架构           |
+| 团队成员 | 工作范围 |
+| --- | --- |
+| [@yeuoly](https://github.com/Yeuoly) | 架构 Agents |
+| [@jyong](https://github.com/JohnJyong) | RAG 流水线设计 |
+| [@GarfieldDai](https://github.com/GarfieldDai) | 构建 workflow 编排 |
+| [@iamjoel](https://github.com/iamjoel) & [@zxhlyh](https://github.com/zxhlyh) | 让我们的前端更易用 |
+| [@guchenhe](https://github.com/guchenhe) & [@crazywoola](https://github.com/crazywoola) | 开发人员体验, 综合事项联系人 |
+| [@takatost](https://github.com/takatost) | 产品整体方向和架构 |
 
-  事项优先级：
+事项优先级：
 
-  | 功能类型                                                 | 优先级        |
-  | ------------------------------------------------------------ | --------------- |
-  | 被团队成员标记为高优先级的功能    | 高优先级   |
-  | 在 [community feedback board](https://github.com/langgenius/dify/discussions/categories/feedbacks) 内反馈的常见功能请求 | 中等优先级 |
-  | 非核心功能和小幅改进                     | 低优先级    |
-  | 有价值当不紧急                                   | 未来功能  |
+| 功能类型 | 优先级 |
+| --- | --- |
+| 被团队成员标记为高优先级的功能 | 高优先级 |
+| 在 [community feedback board](https://github.com/langgenius/dify/discussions/categories/feedbacks) 内反馈的常见功能请求 | 中等优先级 |
+| 非核心功能和小幅改进 | 低优先级 |
+| 有价值当不紧急 | 未来功能 |
 
 ### 其他任何事情（例如 bug 报告、性能优化、拼写错误更正）：
-* 立即开始编码。
+
+- 立即开始编码。
 
   事项优先级：
 
-  | Issue 类型                                                   | 优先级        |
-  | ------------------------------------------------------------ | --------------- |
-  | 核心功能的 Bugs（例如无法登录、应用无法工作、安全漏洞） | 紧急        |
-  | 非紧急 bugs, 性能提升                        | 中等优先级 |
-  | 小幅修复(错别字, 能正常工作但存在误导的 UI)                | 低优先级    |
+  | Issue 类型 | 优先级 |
+  | --- | --- |
+  | 核心功能的 Bugs（例如无法登录、应用无法工作、安全漏洞） | 紧急 |
+  | 非紧急 bugs, 性能提升 | 中等优先级 |
+  | 小幅修复(错别字, 能正常工作但存在误导的 UI) | 低优先级 |
 
 ## 安装
 
 以下是设置 Dify 进行开发的步骤：
 
-### 1. Fork 该仓库
+### 1\. Fork 该仓库
 
-### 2. 克隆仓库
+### 2\. 克隆仓库
 
 从终端克隆代码仓库：
 
@@ -63,7 +64,7 @@
 git clone git@github.com:<github_username>/dify.git
 ```
 
-### 3. 验证依赖项
+### 3\. 验证依赖项
 
 Dify 依赖以下工具和库：
 
@@ -73,15 +74,15 @@ Dify 依赖以下工具和库：
 - [npm](https://www.npmjs.com/) version 8.x.x or [Yarn](https://yarnpkg.com/)
 - [Python](https://www.python.org/) version 3.10.x
 
-### 4. 安装
+### 4\. 安装
 
 Dify 由后端和前端组成。通过 `cd api/` 导航到后端目录，然后按照 [后端 README](api/README.md) 进行安装。在另一个终端中，通过 `cd web/` 导航到前端目录，然后按照 [前端 README](web/README.md) 进行安装。
 
 查看 [安装常见问题解答](https://docs.dify.ai/v/zh-hans/learn-more/faq/install-faq) 以获取常见问题列表和故障排除步骤。
 
-### 5. 在浏览器中访问 Dify
+### 5\. 在浏览器中访问 Dify
 
-为了验证您的设置，打开浏览器并访问 [http://localhost:3000](http://localhost:3000)（默认或您自定义的 URL 和端口）。现在您应该看到 Dify 正在运行。
+为了验证您的设置，打开浏览器并访问 <http://localhost:3000>（默认或您自定义的 URL 和端口）。现在您应该看到 Dify 正在运行。
 
 ## 开发
 
@@ -101,7 +102,7 @@ Dify 的后端使用 Python 编写，使用 [Flask](https://flask.palletsproject
 ├── controllers           // API 路由定义和请求处理逻辑。
 ├── core                  // 核心应用编排、模型集成和工具。
 ├── docker                // Docker 和容器化相关配置。
-├── events                // 事件处理和处理。
+├── events                // 事件处理。
 ├── extensions            // 与第三方框架/平台的扩展。
 ├── fields                // 用于序列化/封装的字段定义。
 ├── libs                  // 可重用的库和助手。
@@ -135,7 +136,7 @@ Dify 的后端使用 Python 编写，使用 [Flask](https://flask.palletsproject
 ├── docker                // 容器配置
 ├── hooks                 // 可重用的钩子
 ├── i18n                  // 国际化配置
-├── models                // 描述数据模型和 API 响应的形状
+├── models                // 描述数据模型和 API 响应的构成
 ├── public                // 如 favicon 等元资源
 ├── service               // 定义 API 操作的形状
 ├── test                  
