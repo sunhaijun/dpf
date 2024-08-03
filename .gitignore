@@ -167,6 +167,8 @@ docker/volumes/chroma/*
 
 docker/nginx/conf.d/default.conf
 docker/middleware.env
+docker/.env
+docker/.env.example
 
 sdks/python-client/build
 sdks/python-client/dist
