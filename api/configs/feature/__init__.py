@@ -49,7 +49,7 @@ class CodeExecutionSandboxConfig(BaseSettings):
 
     CODE_EXECUTION_API_KEY: str = Field(
         description='API key for code execution service',
-        default='dify-sandbox',
+        default='dpf-sandbox',
     )
 
 

@@ -46,7 +46,7 @@ services:
       # The configurations of postgres database connection.
       # It is consistent with the configuration in the 'db' service below.
       DB_USERNAME: postgres
-      DB_PASSWORD: difyai123456
+      DB_PASSWORD: dpf1234432156
       DB_HOST: db
       DB_PORT: 5432
       DB_DATABASE: dify
@@ -55,13 +55,13 @@ services:
       REDIS_HOST: redis
       REDIS_PORT: 6379
       REDIS_USERNAME: ''
-      REDIS_PASSWORD: difyai123456
+      REDIS_PASSWORD: dpf1234432156
       REDIS_USE_SSL: 'false'
       # use redis db 0 for redis cache
       REDIS_DB: 0
       # The configurations of celery broker.
       # Use redis as the broker, and redis db 1 for celery broker.
-      CELERY_BROKER_URL: redis://:difyai123456@redis:6379/1
+      CELERY_BROKER_URL: redis://:dpf1234432156@redis:6379/1
       # Specifies the allowed origins for cross-origin requests to the Web API, e.g. https://dify.app or * for all origins.
       WEB_API_CORS_ALLOW_ORIGINS: '*'
       # Specifies the allowed origins for cross-origin requests to the console API, e.g. https://cloud.dify.ai or * for all origins.
@@ -116,11 +116,11 @@ services:
       # The Weaviate endpoint URL. Only available when VECTOR_STORE is `weaviate`.
       WEAVIATE_ENDPOINT: http://weaviate:8080
       # The Weaviate API key.
-      WEAVIATE_API_KEY: WVF5YThaHlkYwhGUSmCRgsX3tD5ngdN8pkih
+      WEAVIATE_API_KEY: YVF5YThaHlkXwhGUSmCRgsX3tD5ngdN8pkiG
       # The Qdrant endpoint URL. Only available when VECTOR_STORE is `qdrant`.
       QDRANT_URL: http://qdrant:6333
       # The Qdrant API key.
-      QDRANT_API_KEY: difyai123456
+      QDRANT_API_KEY: dpf1234432156
       # The Qdrant client timeout setting.
       QDRANT_CLIENT_TIMEOUT: 20
       # The Qdrant client enable gRPC mode.
@@ -142,13 +142,13 @@ services:
       RELYT_HOST: db
       RELYT_PORT: 5432
       RELYT_USER: postgres
-      RELYT_PASSWORD: difyai123456
+      RELYT_PASSWORD: dpf1234432156
       RELYT_DATABASE: postgres
       # pgvector configurations
       PGVECTOR_HOST: pgvector
       PGVECTOR_PORT: 5432
       PGVECTOR_USER: postgres
-      PGVECTOR_PASSWORD: difyai123456
+      PGVECTOR_PASSWORD: dpf1234432156
       PGVECTOR_DATABASE: dify
       # tidb vector configurations
       TIDB_VECTOR_HOST: tidb
@@ -195,7 +195,7 @@ services:
       NOTION_INTERNAL_SECRET: you-internal-secret
       # The sandbox service endpoint.
       CODE_EXECUTION_ENDPOINT: "http://sandbox:8194"
-      CODE_EXECUTION_API_KEY: dify-sandbox
+      CODE_EXECUTION_API_KEY: dpf-sandbox
       CODE_MAX_NUMBER: 9223372036854775807
       CODE_MIN_NUMBER: -9223372036854775808
       CODE_MAX_STRING_LENGTH: 80000
@@ -241,7 +241,7 @@ services:
       # The configurations of postgres database connection.
       # It is consistent with the configuration in the 'db' service below.
       DB_USERNAME: postgres
-      DB_PASSWORD: difyai123456
+      DB_PASSWORD: dpf1234432156
       DB_HOST: db
       DB_PORT: 5432
       DB_DATABASE: dify
@@ -249,11 +249,11 @@ services:
       REDIS_HOST: redis
       REDIS_PORT: 6379
       REDIS_USERNAME: ''
-      REDIS_PASSWORD: difyai123456
+      REDIS_PASSWORD: dpf1234432156
       REDIS_DB: 0
       REDIS_USE_SSL: 'false'
       # The configurations of celery broker.
-      CELERY_BROKER_URL: redis://:difyai123456@redis:6379/1
+      CELERY_BROKER_URL: redis://:dpf1234432156@redis:6379/1
       # The type of storage to use for storing user files. Supported values are `local` and `s3` and `azure-blob` and `google-storage`, Default: `local`
       STORAGE_TYPE: local
       STORAGE_LOCAL_PATH: storage
@@ -291,11 +291,11 @@ services:
       # The Weaviate endpoint URL. Only available when VECTOR_STORE is `weaviate`.
       WEAVIATE_ENDPOINT: http://weaviate:8080
       # The Weaviate API key.
-      WEAVIATE_API_KEY: WVF5YThaHlkYwhGUSmCRgsX3tD5ngdN8pkih
+      WEAVIATE_API_KEY: YVF5YThaHlkXwhGUSmCRgsX3tD5ngdN8pkiG
       # The Qdrant endpoint URL. Only available when VECTOR_STORE is `qdrant`.
       QDRANT_URL: http://qdrant:6333
       # The Qdrant API key.
-      QDRANT_API_KEY: difyai123456
+      QDRANT_API_KEY: dpf1234432156
       # The Qdrant client timeout setting.
       QDRANT_CLIENT_TIMEOUT: 20
       # The Qdrant client enable gRPC mode.
@@ -330,7 +330,7 @@ services:
       RELYT_HOST: db
       RELYT_PORT: 5432
       RELYT_USER: postgres
-      RELYT_PASSWORD: difyai123456
+      RELYT_PASSWORD: dpf1234432156
       RELYT_DATABASE: postgres
       # tencent configurations
       TENCENT_VECTOR_DB_URL: http://127.0.0.1
@@ -350,7 +350,7 @@ services:
       PGVECTOR_HOST: pgvector
       PGVECTOR_PORT: 5432
       PGVECTOR_USER: postgres
-      PGVECTOR_PASSWORD: difyai123456
+      PGVECTOR_PASSWORD: dpf1234432156
       PGVECTOR_DATABASE: dify
       # tidb vector configurations
       TIDB_VECTOR_HOST: tidb
@@ -414,7 +414,7 @@ services:
     environment:
       PGUSER: postgres
       # The password for the default postgres user.
-      POSTGRES_PASSWORD: difyai123456
+      POSTGRES_PASSWORD: dpf1234432156
       # The name of the default postgres database.
       POSTGRES_DB: dify
       # postgres data directory
@@ -441,7 +441,7 @@ services:
       # Mount the redis data directory to the container.
       - ./volumes/redis/data:/data
     # Set the redis password when startup redis server.
-    command: redis-server --requirepass difyai123456
+    command: redis-server --requirepass dpf1234432156
     healthcheck:
       test: [ "CMD", "redis-cli", "ping" ]
     # uncomment to expose redis port to host
@@ -464,10 +464,10 @@ services:
       DEFAULT_VECTORIZER_MODULE: 'none'
       CLUSTER_HOSTNAME: 'node1'
       AUTHENTICATION_APIKEY_ENABLED: 'true'
-      AUTHENTICATION_APIKEY_ALLOWED_KEYS: 'WVF5YThaHlkYwhGUSmCRgsX3tD5ngdN8pkih'
-      AUTHENTICATION_APIKEY_USERS: 'hello@dify.ai'
+      AUTHENTICATION_APIKEY_ALLOWED_KEYS: 'YVF5YThaHlkXwhGUSmCRgsX3tD5ngdN8pkiG'
+      AUTHENTICATION_APIKEY_USERS: 'hello@localhost'
       AUTHORIZATION_ADMINLIST_ENABLED: 'true'
-      AUTHORIZATION_ADMINLIST_USERS: 'hello@dify.ai'
+      AUTHORIZATION_ADMINLIST_USERS: 'hello@localhost'
     # uncomment to expose weaviate port to host
     # ports:
     #  - "8080:8080"
@@ -480,7 +480,7 @@ services:
       # The DifySandbox configurations
       # Make sure you are changing this key for your deployment with a strong key.
       # You can generate a strong key using `openssl rand -base64 42`.
-      API_KEY: dify-sandbox
+      API_KEY: dpf-sandbox
       GIN_MODE: 'release'
       WORKER_TIMEOUT: 15
       ENABLE_NETWORK: 'true'
@@ -514,7 +514,7 @@ services:
   #   volumes:
   #     - ./volumes/qdrant:/qdrant/storage
   #   environment:
-  #     QDRANT_API_KEY: 'difyai123456'
+  #     QDRANT_API_KEY: 'dpf1234432156'
   #   # uncomment to expose qdrant port to host
   #   # ports:
   #   #  - "6333:6333"
@@ -528,7 +528,7 @@ services:
   #   environment:
   #     PGUSER: postgres
   #     # The password for the default postgres user.
-  #     POSTGRES_PASSWORD: difyai123456
+  #     POSTGRES_PASSWORD: dpf1234432156
   #     # The name of the default postgres database.
   #     POSTGRES_DB: dify
   #     # postgres data directory

@@ -49,8 +49,8 @@
     In case of contributors missing to update dependencies for `pyproject.toml`, you can perform the following shell instead.
 
     ```bash
-    poetry shell                                               # activate current environment
-    poetry add $(cat requirements.txt)           # install dependencies of production and update pyproject.toml
+    poetry shell                                          # activate current environment
+    poetry add $(cat requirements.txt)                    # install dependencies of production and update pyproject.toml
     poetry add $(cat requirements-dev.txt) --group dev    # install dependencies of development and update pyproject.toml
     ```
 

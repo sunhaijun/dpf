@@ -13,7 +13,7 @@ class WeaviateVectorTest(AbstractVectorTest):
             collection_name=self.collection_name,
             config=WeaviateConfig(
                 endpoint='http://localhost:8080',
-                api_key='WVF5YThaHlkYwhGUSmCRgsX3tD5ngdN8pkih',
+                api_key='YVF5YThaHlkXwhGUSmCRgsX3tD5ngdN8pkiG',
             ),
             attributes=self.attributes
         )
