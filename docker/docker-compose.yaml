@@ -182,7 +182,7 @@ x-shared-env: &shared-api-worker-env
 services:
   # API service
   api:
-    image: langgenius/dify-api:0.6.15
+    image: langgenius/dify-api:0.6.16
     restart: always
     environment:
       # Use the shared environment variables.
@@ -202,7 +202,7 @@ services:
   # worker service
   # The Celery worker for processing the queue.
   worker:
-    image: langgenius/dify-api:0.6.15
+    image: langgenius/dify-api:0.6.16
     restart: always
     environment:
       # Use the shared environment variables.
@@ -221,7 +221,7 @@ services:
 
   # Frontend web application.
   web:
-    image: langgenius/dify-web:0.6.15
+    image: langgenius/dify-web:0.6.16
     restart: always
     environment:
       CONSOLE_API_URL: ${CONSOLE_API_URL:-}
@@ -279,7 +279,7 @@ services:
 
   # ssrf_proxy server
   # for more information, please refer to
-  # https://docs.dify.ai/getting-started/install-self-hosted/install-faq#id-16.-why-is-ssrf_proxy-needed
+  # https://docs.dify.ai/learn-more/faq/self-host-faq#id-18.-why-is-ssrf_proxy-needed
   ssrf_proxy:
     image: ubuntu/squid:latest
     restart: always
@@ -418,7 +418,7 @@ services:
 
   # pgvecto-rs vector store
   pgvecto-rs:
-    image: tensorchord/pgvecto-rs:pg16-v0.2.0
+    image: tensorchord/pgvecto-rs:pg16-v0.3.0
     profiles:
       - pgvecto-rs
     restart: always
@@ -582,6 +582,16 @@ services:
       - ./volumes/myscale/config/users.d/custom_users_config.xml:/etc/clickhouse-server/users.d/custom_users_config.xml
     ports:
       - "${MYSCALE_PORT:-8123}:${MYSCALE_PORT:-8123}"
+
+  # unstructured .
+  # (if used, you need to set ETL_TYPE to Unstructured in the api & worker service.)
+  unstructured:
+    image: downloads.unstructured.io/unstructured-io/unstructured-api:latest
+    profiles:
+      - unstructured
+    restart: always
+    volumes:
+      - ./volumes/unstructured:/app/data
 
 networks:
   # create a network between sandbox, api and ssrf_proxy, and can not access outside.

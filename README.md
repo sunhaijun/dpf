@@ -1,1 +1,1 @@
-1. 整体说明看根目录 CONTRIBUTION\_[CN.md](http://CN.md)文件
+1. 整体说明看根目录 CONTRIBUTION\_[CN.md](http://cn.md/)文件
