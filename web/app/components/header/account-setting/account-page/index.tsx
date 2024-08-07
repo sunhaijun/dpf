@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { useContext } from 'use-context-selector'
-import Collapse from '../collapse'
 import type { IItem } from '../collapse'
 import s from './index.module.css'
 import classNames from '@/utils/classnames'
@@ -151,7 +150,7 @@ export default function AccountPage() {
           <Button onClick={() => setEditPasswordModalVisible(true)}>{userProfile.is_password_set ? t('common.account.resetPassword') : t('common.account.setPassword')}</Button>
         </div>
       )}
-      <div className='mb-6 border-[0.5px] border-gray-100' />
+      {/* <div className='mb-6 border-[0.5px] border-gray-100' />
       <div className='mb-8'>
         <div className={titleClassName}>{t('common.account.langGeniusAccount')}</div>
         <div className={descriptionClassName}>{t('common.account.langGeniusAccountTip')}</div>
@@ -164,7 +163,7 @@ export default function AccountPage() {
           />
         )}
         {!IS_CE_EDITION && <Button className='mt-2 text-[#D92D20]' onClick={() => setShowDeleteAccountModal(true)}>{t('common.account.delete')}</Button>}
-      </div>
+      </div> */}
       {editNameModalVisible && (
         <Modal
           isShow

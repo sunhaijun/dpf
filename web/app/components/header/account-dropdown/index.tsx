@@ -4,7 +4,6 @@ import { Fragment, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useContext } from 'use-context-selector'
 import { RiArrowDownSLine } from '@remixicon/react'
-import Link from 'next/link'
 import { Menu, Transition } from '@headlessui/react'
 import Indicator from '../indicator'
 import AccountAbout from '../account-about'
@@ -18,7 +17,6 @@ import { useAppContext } from '@/context/app-context'
 import { ArrowUpRight } from '@/app/components/base/icons/src/vender/line/arrows'
 import { LogOut01 } from '@/app/components/base/icons/src/vender/line/general'
 import { useModalContext } from '@/context/modal-context'
-import { LanguagesSupported } from '@/i18n/language'
 import { useProviderContext } from '@/context/provider-context'
 import { Plan } from '@/app/components/billing/type'
 
@@ -120,7 +118,7 @@ export default function AppSelector({ isMobile }: IAppSelecotr) {
                         <ArrowUpRight className='hidden w-[14px] h-[14px] text-gray-500 group-hover:flex' />
                       </a>
                     </Menu.Item>}
-                    <Menu.Item>
+                    {/* <Menu.Item>
                       <Link
                         className={classNames(itemClassName, 'group justify-between')}
                         href='https://github.com/langgenius/dify/discussions/categories/feedbacks'
@@ -148,7 +146,7 @@ export default function AppSelector({ isMobile }: IAppSelecotr) {
                         <div>{t('common.userProfile.helpCenter')}</div>
                         <ArrowUpRight className='hidden w-[14px] h-[14px] text-gray-500 group-hover:flex' />
                       </Link>
-                    </Menu.Item>
+                    </Menu.Item> */}
                     {
                       document?.body?.getAttribute('data-public-site-about') !== 'hide' && (
                         <Menu.Item>

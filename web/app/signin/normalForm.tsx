@@ -266,22 +266,6 @@ const NormalForm = () => {
               </form>
             </>
           }
-          {/*  agree to our Terms and Privacy Policy. */}
-          <div className="w-hull text-center block mt-2 text-xs text-gray-600">
-            {t('login.tosDesc')}
-            &nbsp;
-            <Link
-              className='text-primary-600'
-              target='_blank' rel='noopener noreferrer'
-              href='https://dify.ai/terms'
-            >{t('login.tos')}</Link>
-            &nbsp;&&nbsp;
-            <Link
-              className='text-primary-600'
-              target='_blank' rel='noopener noreferrer'
-              href='https://dify.ai/privacy'
-            >{t('login.pp')}</Link>
-          </div>
 
           {IS_CE_EDITION && <div className="w-hull text-center block mt-2 text-xs text-gray-600">
             {t('login.goToInit')}

@@ -439,8 +439,8 @@ const translation = {
   about: {
     changeLog: 'Changelog',
     updateNow: 'Update now',
-    nowAvailable: 'Dify {{version}} is now available.',
-    latestAvailable: 'Dify {{version}} is the latest version available.',
+    nowAvailable: 'DPF {{version}} is now available.',
+    latestAvailable: 'DPF {{version}} is the latest version available.',
   },
   appMenus: {
     overview: 'Monitoring',

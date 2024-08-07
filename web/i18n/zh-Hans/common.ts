@@ -435,8 +435,8 @@ const translation = {
   about: {
     changeLog: '更新日志',
     updateNow: '现在更新',
-    nowAvailable: 'Dify {{version}} 现已可用。',
-    latestAvailable: 'Dify {{version}} 已是最新版本。',
+    nowAvailable: 'DPF {{version}} 现已可用。',
+    latestAvailable: 'DPF {{version}} 已是最新版本。',
   },
   appMenus: {
     overview: '监测',
