@@ -11,7 +11,6 @@ import FormGeneration from './form-generation'
 import ApiBasedExtensionSelector from '@/app/components/header/account-setting/api-based-extension-page/selector'
 import Modal from '@/app/components/base/modal'
 import Button from '@/app/components/base/button'
-import { BookOpen01 } from '@/app/components/base/icons/src/vender/line/education'
 import type { ModerationConfig, ModerationContentConfig } from '@/models/debug'
 import { useToastContext } from '@/app/components/base/toast'
 import {
@@ -309,7 +308,7 @@ const ModerationSettingModal: FC<ModerationSettingModalProps> = ({
       {
         localeData.type === 'api' && (
           <div className='py-2'>
-            <div className='flex items-center justify-between h-9'>
+            {/* <div className='flex items-center justify-between h-9'>
               <div className='text-sm font-medium text-gray-900'>{t('common.apiBasedExtension.selector.title')}</div>
               <a
                 href={t('common.apiBasedExtension.linkUrl') || '/'}
@@ -319,7 +318,7 @@ const ModerationSettingModal: FC<ModerationSettingModalProps> = ({
                 <BookOpen01 className='mr-1 w-3 h-3 text-gray-500 group-hover:text-primary-600' />
                 {t('common.apiBasedExtension.link')}
               </a>
-            </div>
+            </div> */}
             <ApiBasedExtensionSelector
               value={localeData.config?.api_based_extension_id || ''}
               onChange={handleDataApiBasedChange}

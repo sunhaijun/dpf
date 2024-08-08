@@ -8,7 +8,6 @@ import Modal from '@/app/components/base/modal'
 import Button from '@/app/components/base/button'
 import EmojiPicker from '@/app/components/base/emoji-picker'
 import ApiBasedExtensionSelector from '@/app/components/header/account-setting/api-based-extension-page/selector'
-import { BookOpen01 } from '@/app/components/base/icons/src/vender/line/education'
 import { fetchCodeBasedExtensionList } from '@/service/common'
 import { SimpleSelect } from '@/app/components/base/select'
 import I18n from '@/context/i18n'
@@ -239,7 +238,7 @@ const ExternalDataToolModal: FC<ExternalDataToolModalProps> = ({
       {
         localeData.type === 'api' && (
           <div className='py-2'>
-            <div className='flex justify-between items-center h-9 text-sm font-medium text-gray-900'>
+            {/* <div className='flex justify-between items-center h-9 text-sm font-medium text-gray-900'>
               {t('common.apiBasedExtension.selector.title')}
               <a
                 href={t('common.apiBasedExtension.linkUrl') || '/'}
@@ -249,7 +248,7 @@ const ExternalDataToolModal: FC<ExternalDataToolModalProps> = ({
                 <BookOpen01 className='mr-1 w-3 h-3 text-gray-500 group-hover:text-primary-600' />
                 {t('common.apiBasedExtension.link')}
               </a>
-            </div>
+            </div> */}
             <ApiBasedExtensionSelector
               value={localeData.config?.api_based_extension_id || ''}
               onChange={handleDataApiBasedChange}
