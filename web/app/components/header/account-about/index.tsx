@@ -1,13 +1,10 @@
 'use client'
 import { useTranslation } from 'react-i18next'
-import Link from 'next/link'
 import dayjs from 'dayjs'
 import { RiCloseLine } from '@remixicon/react'
 import s from './index.module.css'
-import classNames from '@/utils/classnames'
 import Modal from '@/app/components/base/modal'
 import type { LangGeniusVersionResponse } from '@/models/common'
-import { IS_CE_EDITION } from '@/config'
 import LogoSite from '@/app/components/base/logo/logo-site'
 
 type IAccountSettingProps = {
@@ -43,7 +40,7 @@ export default function AccountAbout({
           </div>
         </div>
         <div className='mb-4 -mx-8 h-[0.5px] bg-gray-200' />
-        <div className='flex justify-between items-center'>
+        {/* <div className='flex justify-between items-center'>
           <div className='text-xs font-medium text-gray-800'>
             {
               isLatest
@@ -71,7 +68,7 @@ export default function AccountAbout({
               )
             }
           </div>
-        </div>
+        </div> */}
       </div>
     </Modal>
   )

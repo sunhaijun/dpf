@@ -4,15 +4,11 @@ import { useEffect, useRef, useState } from 'react'
 import {
   RiAccountCircleFill,
   RiAccountCircleLine,
-  RiApps2AddFill,
-  RiApps2AddLine,
   RiBox3Fill,
   RiBox3Line,
   RiCloseLine,
   RiColorFilterFill,
   RiColorFilterLine,
-  RiDatabase2Fill,
-  RiDatabase2Line,
   RiGroup2Fill,
   RiGroup2Line,
   RiMoneyDollarCircleFill,
@@ -91,12 +87,12 @@ export default function AccountSetting({
         icon: <RiMoneyDollarCircleLine className={iconClassName} />,
         activeIcon: <RiMoneyDollarCircleFill className={iconClassName} />,
       },
-      {
-        key: 'data-source',
-        name: t('common.settings.dataSource'),
-        icon: <RiDatabase2Line className={iconClassName} />,
-        activeIcon: <RiDatabase2Fill className={iconClassName} />,
-      },
+      // {
+      //   key: 'data-source',
+      //   name: t('common.settings.dataSource'),
+      //   icon: <RiDatabase2Line className={iconClassName} />,
+      //   activeIcon: <RiDatabase2Fill className={iconClassName} />,
+      // },
       {
         key: 'api-based-extension',
         name: t('common.settings.apiBasedExtension'),
@@ -131,12 +127,12 @@ export default function AccountSetting({
           icon: <RiAccountCircleLine className={iconClassName} />,
           activeIcon: <RiAccountCircleFill className={iconClassName} />,
         },
-        {
-          key: 'integrations',
-          name: t('common.settings.integrations'),
-          icon: <RiApps2AddLine className={iconClassName} />,
-          activeIcon: <RiApps2AddFill className={iconClassName} />,
-        },
+        // {
+        //   key: 'integrations',
+        //   name: t('common.settings.integrations'),
+        //   icon: <RiApps2AddLine className={iconClassName} />,
+        //   activeIcon: <RiApps2AddFill className={iconClassName} />,
+        // },
         {
           key: 'language',
           name: t('common.settings.language'),

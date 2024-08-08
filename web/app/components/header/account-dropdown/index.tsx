@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation'
 import { useContext } from 'use-context-selector'
 import { RiArrowDownSLine } from '@remixicon/react'
 import { Menu, Transition } from '@headlessui/react'
-import Indicator from '../indicator'
 import AccountAbout from '../account-about'
 import { mailToSupport } from '../utils/util'
 import WorkplaceSelector from './workplace-selector'
@@ -154,7 +153,7 @@ export default function AppSelector({ isMobile }: IAppSelecotr) {
                             <div>{t('common.userProfile.about')}</div>
                             <div className='flex items-center'>
                               <div className='mr-2 text-xs font-normal text-gray-500'>{langeniusVersionInfo.current_version}</div>
-                              <Indicator color={langeniusVersionInfo.current_version === langeniusVersionInfo.latest_version ? 'green' : 'orange'} />
+                              {/* <Indicator color={langeniusVersionInfo.current_version === langeniusVersionInfo.latest_version ? 'green' : 'orange'} /> */}
                             </div>
                           </div>
                         </Menu.Item>
