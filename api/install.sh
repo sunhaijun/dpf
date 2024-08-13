@@ -4,10 +4,16 @@ set -e
 
 # install dependencies (including PostgreSQL, Redis, and Weaviate)
 cd ../docker
+
+# for clean dev environment
+# rm -rf volumes/db
+# rm -rf volumes/redis
+# rm -rf volumes/weaviate
+
 #cp middleware.env.example middleware.env
 docker compose -f docker-compose.middleware.yaml --profile weaviate -p dpf up -d
-cd ../api
 
+cd ../api
 poetry env use 3.10
 poetry install
 
