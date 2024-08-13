@@ -41,7 +41,6 @@ from services.errors.file import FileNotExistsError
 from services.feature_service import FeatureModel, FeatureService
 from services.tag_service import TagService
 from services.vector_service import VectorService
-from tasks.clean_notion_document_task import clean_notion_document_task
 from tasks.deal_dataset_vector_index_task import deal_dataset_vector_index_task
 from tasks.delete_segment_from_index_task import delete_segment_from_index_task
 from tasks.disable_segment_from_index_task import disable_segment_from_index_task
