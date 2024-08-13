@@ -72,7 +72,7 @@
 
  9. Setup your application by visiting `http://localhost:3000`...
 
-10. If you need to debug local async processing, please start the worker service.
+10. If you need to debug local async processing, please start the worker service.（否则，会出现知识库添加文档时，始终处于  “排队中” 状态的问题！！）
 
 ```bash
 poetry run python -m celery -A app.celery worker -P gevent -c 1 --loglevel INFO -Q dataset,generation,mail,ops_trace,app_deletion

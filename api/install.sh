@@ -23,4 +23,9 @@ poetry run python -m flask db upgrade
 # Start backend
 poetry run python -m flask run --host 0.0.0.0 --port=5001 --debug
 
+# If you need to debug local async processing, please start the worker service
+poetry run python -m celery -A app.celery worker -P gevent -c 1 --loglevel INFO -Q dataset,generation,mail,ops_trace,app_deletion
+
+
+
 

@@ -803,87 +803,87 @@ class DocumentService:
                     document_ids.append(document.id)
                     documents.append(document)
                     position += 1
-            elif document_data["data_source"]["type"] == "notion_import":
-                notion_info_list = document_data["data_source"]['info_list']['notion_info_list']
-                exist_page_ids = []
-                exist_document = {}
-                documents = Document.query.filter_by(
-                    dataset_id=dataset.id,
-                    tenant_id=current_user.current_tenant_id,
-                    data_source_type='notion_import',
-                    enabled=True
-                ).all()
-                if documents:
-                    for document in documents:
-                        data_source_info = json.loads(document.data_source_info)
-                        exist_page_ids.append(data_source_info['notion_page_id'])
-                        exist_document[data_source_info['notion_page_id']] = document.id
-                for notion_info in notion_info_list:
-                    workspace_id = notion_info['workspace_id']
-                    data_source_binding = DataSourceOauthBinding.query.filter(
-                        db.and_(
-                            DataSourceOauthBinding.tenant_id == current_user.current_tenant_id,
-                            DataSourceOauthBinding.provider == 'notion',
-                            DataSourceOauthBinding.disabled == False,
-                            DataSourceOauthBinding.source_info['workspace_id'] == f'"{workspace_id}"'
-                        )
-                    ).first()
-                    if not data_source_binding:
-                        raise ValueError('Data source binding not found.')
-                    for page in notion_info['pages']:
-                        if page['page_id'] not in exist_page_ids:
-                            data_source_info = {
-                                "notion_workspace_id": workspace_id,
-                                "notion_page_id": page['page_id'],
-                                "notion_page_icon": page['page_icon'],
-                                "type": page['type']
-                            }
-                            document = DocumentService.build_document(
-                                dataset, dataset_process_rule.id,
-                                document_data["data_source"]["type"],
-                                document_data["doc_form"],
-                                document_data["doc_language"],
-                                data_source_info, created_from, position,
-                                account, page['page_name'], batch
-                            )
-                            db.session.add(document)
-                            db.session.flush()
-                            document_ids.append(document.id)
-                            documents.append(document)
-                            position += 1
-                        else:
-                            exist_document.pop(page['page_id'])
-                # delete not selected documents
-                if len(exist_document) > 0:
-                    clean_notion_document_task.delay(list(exist_document.values()), dataset.id)
-            elif document_data["data_source"]["type"] == "website_crawl":
-                website_info = document_data["data_source"]['info_list']['website_info_list']
-                urls = website_info['urls']
-                for url in urls:
-                    data_source_info = {
-                        'url': url,
-                        'provider': website_info['provider'],
-                        'job_id': website_info['job_id'],
-                        'only_main_content': website_info.get('only_main_content', False),
-                        'mode': 'crawl',
-                    }
-                    if len(url) > 255:
-                        document_name = url[:200] + '...'
-                    else:
-                        document_name = url
-                    document = DocumentService.build_document(
-                        dataset, dataset_process_rule.id,
-                        document_data["data_source"]["type"],
-                        document_data["doc_form"],
-                        document_data["doc_language"],
-                        data_source_info, created_from, position,
-                        account, document_name, batch
-                    )
-                    db.session.add(document)
-                    db.session.flush()
-                    document_ids.append(document.id)
-                    documents.append(document)
-                    position += 1
+            # elif document_data["data_source"]["type"] == "notion_import":
+            #     notion_info_list = document_data["data_source"]['info_list']['notion_info_list']
+            #     exist_page_ids = []
+            #     exist_document = {}
+            #     documents = Document.query.filter_by(
+            #         dataset_id=dataset.id,
+            #         tenant_id=current_user.current_tenant_id,
+            #         data_source_type='notion_import',
+            #         enabled=True
+            #     ).all()
+            #     if documents:
+            #         for document in documents:
+            #             data_source_info = json.loads(document.data_source_info)
+            #             exist_page_ids.append(data_source_info['notion_page_id'])
+            #             exist_document[data_source_info['notion_page_id']] = document.id
+            #     for notion_info in notion_info_list:
+            #         workspace_id = notion_info['workspace_id']
+            #         data_source_binding = DataSourceOauthBinding.query.filter(
+            #             db.and_(
+            #                 DataSourceOauthBinding.tenant_id == current_user.current_tenant_id,
+            #                 DataSourceOauthBinding.provider == 'notion',
+            #                 DataSourceOauthBinding.disabled == False,
+            #                 DataSourceOauthBinding.source_info['workspace_id'] == f'"{workspace_id}"'
+            #             )
+            #         ).first()
+            #         if not data_source_binding:
+            #             raise ValueError('Data source binding not found.')
+            #         for page in notion_info['pages']:
+            #             if page['page_id'] not in exist_page_ids:
+            #                 data_source_info = {
+            #                     "notion_workspace_id": workspace_id,
+            #                     "notion_page_id": page['page_id'],
+            #                     "notion_page_icon": page['page_icon'],
+            #                     "type": page['type']
+            #                 }
+            #                 document = DocumentService.build_document(
+            #                     dataset, dataset_process_rule.id,
+            #                     document_data["data_source"]["type"],
+            #                     document_data["doc_form"],
+            #                     document_data["doc_language"],
+            #                     data_source_info, created_from, position,
+            #                     account, page['page_name'], batch
+            #                 )
+            #                 db.session.add(document)
+            #                 db.session.flush()
+            #                 document_ids.append(document.id)
+            #                 documents.append(document)
+            #                 position += 1
+            #             else:
+            #                 exist_document.pop(page['page_id'])
+            #     # delete not selected documents
+            #     if len(exist_document) > 0:
+            #         clean_notion_document_task.delay(list(exist_document.values()), dataset.id)
+            # elif document_data["data_source"]["type"] == "website_crawl":
+            #     website_info = document_data["data_source"]['info_list']['website_info_list']
+            #     urls = website_info['urls']
+            #     for url in urls:
+            #         data_source_info = {
+            #             'url': url,
+            #             'provider': website_info['provider'],
+            #             'job_id': website_info['job_id'],
+            #             'only_main_content': website_info.get('only_main_content', False),
+            #             'mode': 'crawl',
+            #         }
+            #         if len(url) > 255:
+            #             document_name = url[:200] + '...'
+            #         else:
+            #             document_name = url
+            #         document = DocumentService.build_document(
+            #             dataset, dataset_process_rule.id,
+            #             document_data["data_source"]["type"],
+            #             document_data["doc_form"],
+            #             document_data["doc_language"],
+            #             data_source_info, created_from, position,
+            #             account, document_name, batch
+            #         )
+            #         db.session.add(document)
+            #         db.session.flush()
+            #         document_ids.append(document.id)
+            #         documents.append(document)
+            #         position += 1
             db.session.commit()
 
             # trigger async task
