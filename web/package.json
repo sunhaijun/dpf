@@ -1,6 +1,6 @@
 {
-  "name": "dpf-web",
-  "version": "0.6.16",
+  "name": "dify-web",
+  "version": "0.7.0",
   "private": true,
   "engines": {
     "node": ">=18.17.0"
