@@ -169,6 +169,16 @@ docker/nginx/conf.d/default.conf
 docker/middleware.env
 docker/.env
 docker/.env.example
+docker/dl_dep_imgs.sh
+docker/gen_*.sh
+docker/load_*.sh
+docker/dpf-api_0.7.0.tar
+docker/dpf-web_0.7.0.tar
+docker/offline_images
+docker/deploy_pkg
+docker/deploy_pkg.tar.gz
+docker/memo
+
 
 sdks/python-client/build
 sdks/python-client/dist

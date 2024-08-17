@@ -52,7 +52,8 @@ const OneMoreStep = () => {
   const [state, dispatch] = useReducer(reducer, {
     formState: 'initial',
     invitation_code: '',
-    interface_language: 'en-US',
+    // interface_language: 'en-US',
+    interface_language: 'zh-CN',
     timezone: 'Asia/Shanghai',
   })
   const { data, error } = useSWR(state.formState === 'processing'
