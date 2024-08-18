@@ -203,6 +203,8 @@ services:
     networks:
       - ssrf_proxy_network
       - default
+    ports:
+      - "${EXPOSE_API_PORT:-5001}:${DIFY_PORT:-5001}"
 
   # worker service
   # The Celery worker for processing the queue.
@@ -233,6 +235,8 @@ services:
       APP_API_URL: ${APP_API_URL:-}
       SENTRY_DSN: ${WEB_SENTRY_DSN:-}
       NEXT_TELEMETRY_DISABLED: ${NEXT_TELEMETRY_DISABLED:-0}
+    ports:
+      - "${EXPOSE_WEB_PORT:-3000}:3000"
 
   # The postgres database.
   db:
