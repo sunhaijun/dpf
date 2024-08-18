@@ -24,6 +24,7 @@ cp docker-compose.yaml deploy_pkg/docker-compose.yaml
 cp prepare_docker_env.sh deploy_pkg/
 cp load_dep_imgs.sh deploy_pkg/
 cp load_dpf_imgs.sh deploy_pkg/
+cp -r nginx deploy_pkg/
 cp -r ssrf_proxy deploy_pkg/
 cp -r volumes deploy_pkg/
 

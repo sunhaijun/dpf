@@ -18,7 +18,7 @@
 2.2 制作部署包
     ./gen_deploy_pkg.sh
 
-2.3 部署
+2.3 部署(进入deploy_pkg目录)
     复制deploy_pkg.tar.gz到目标机器，解压，执行：
     sh:
         安装服务器docker环境:
