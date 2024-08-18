@@ -1,6 +1,8 @@
 .env
 .env.*
 
+dpf-web_*.tar
+
 # Logs
 logs
 *.log*
@@ -22,3 +24,5 @@ node_modules
 
 # Jetbrains
 .idea
+
+

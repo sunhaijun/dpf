@@ -143,6 +143,7 @@ api/.idea
 
 api/.env
 api/storage/*
+api/dpf-api_*.tar
 
 docker-legacy/volumes/app/storage/*
 docker-legacy/volumes/db/data/*
@@ -169,11 +170,7 @@ docker/nginx/conf.d/default.conf
 docker/middleware.env
 docker/.env
 docker/.env.example
-docker/dl_dep_imgs.sh
-docker/gen_*.sh
-docker/load_*.sh
-docker/dpf-api_0.7.0.tar
-docker/dpf-web_0.7.0.tar
+docker/gen_docker_img.sh
 docker/offline_images
 docker/deploy_pkg
 docker/deploy_pkg.tar.gz
