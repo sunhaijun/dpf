@@ -8,19 +8,27 @@
 
 
 2. 离线环境）
-2.1 安装服务器docker环境
-    ./prepare_docker_env.sh
+2.1 生成dpf-api, dpf-web docker image 文件
+    ./gen_dpf_imgs_offline.sh
 
-2.2 生成dpf-api, dpf-web docker image 文件
-    ./gen_docker_img_offline.sh
+    sh:
+        ./gen_dpf_imgs_offline.sh &
+        disown
 
-2.3 制作部署包
+2.2 制作部署包
     ./gen_deploy_pkg.sh
 
-2.4 部署
-    复制deploy_pkg.tar.gz到目标机器，解压，执行
-    ./load_docker_img.sh
-    docker compose up -d
+2.3 部署
+    复制deploy_pkg.tar.gz到目标机器，解压，执行：
+    sh:
+        安装服务器docker环境:
+        ./prepare_docker_env.sh
+
+        加载docker镜像:
+        ./load_docker_img.sh
+
+        启动DPF服务:
+        docker compose up -d
 
 3. 备注
 3.1 更新dpf镜像

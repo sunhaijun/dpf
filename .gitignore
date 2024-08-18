@@ -170,7 +170,6 @@ docker/nginx/conf.d/default.conf
 docker/middleware.env
 docker/.env
 docker/.env.example
-docker/gen_docker_img.sh
 docker/deploy_pkg
 docker/deploy_pkg.tar.gz
 
