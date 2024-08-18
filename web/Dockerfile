@@ -18,7 +18,9 @@ COPY yarn.lock .
 # if you located in China, you can use taobao registry to speed up
 # RUN yarn install --frozen-lockfile --registry https://registry.npmmirror.com/
 
-RUN yarn install --frozen-lockfile
+#RUN yarn cache clean
+#RUN  yarn install --frozen-lockfile
+RUN yarn config set network-timeout 600000 -g && yarn install --frozen-lockfile
 
 # build resources
 FROM base AS builder
