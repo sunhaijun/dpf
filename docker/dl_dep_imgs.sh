@@ -18,7 +18,7 @@ yellow() {
 }
 
 # 创建 offline_images 文件夹
-mkdir -p offline_images
+mkdir -p deploy_pkg/offline_images > /dev/null
 
 # 定义需要下载的镜像列表
 images=(
@@ -52,8 +52,8 @@ for image in "${images[@]}"; do
     echo "Pulling image $image..."
     docker pull $image
     image_name=$(echo $image | tr '/' '_' | tr ':' '_')
-    echo "Saving image $image to offline_images/${image_name}.tar..."
-    docker save -o "offline_images/${image_name}.tar" $image
+    echo "Saving image $image to deploy_pkg/offline_images/${image_name}.tar..."
+    docker save -o "deploy_pkg/offline_images/${image_name}.tar" $image
 done
 
 green "All images have been downloaded and saved to offline_images folder."

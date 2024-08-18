@@ -19,6 +19,7 @@ app_api_name="dpf-api"
 echo "Start to build dpf-api..." | tee -a $log_file
 docker buildx build --platform $platforms -t ${app_api_name}:$app_version --build-arg APP_VERSION=$app_version --output type=oci,dest=${app_api_name}_${app_version}.tar . > /dev/null 2>> $log_file
 echo "Build and save ${app_api_name}:$app_version as ${app_api_name}_${app_version}.tar done." | tee -a $log_file
+mv ${app_api_name}_${app_version}.tar ../docker/deploy_pkg/offline_images
 
 # 构建dpf-web版本 $app_version 的镜像并保存为本地离线文件
 cd ../web
@@ -26,9 +27,12 @@ app_web_name="dpf-web"
 echo "Start to build dpf-web..." | tee -a $log_file
 docker buildx build --platform $platforms -t ${app_web_name}:$app_version --build-arg APP_VERSION=$app_version --output type=oci,dest=${app_web_name}_${app_version}.tar . > /dev/null 2>> $log_file
 echo "Build and save ${app_web_name}:$app_version as ${app_web_name}_${app_version}.tar done." | tee -a $log_file
+mv ${app_web_name}_${app_version}.tar ../docker/deploy_pkg/offline_images
 
 # 删除构建器实例
 docker buildx rm  > /dev/null 2>> $log_file
 echo "Buildx instance removed." | tee -a $log_file
+
+cd ../docker
 
 echo "All done." | tee -a $log_file

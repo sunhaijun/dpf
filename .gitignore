@@ -171,10 +171,8 @@ docker/middleware.env
 docker/.env
 docker/.env.example
 docker/gen_docker_img.sh
-docker/offline_images
 docker/deploy_pkg
 docker/deploy_pkg.tar.gz
-docker/memo
 
 
 sdks/python-client/build
