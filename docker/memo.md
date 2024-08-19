@@ -12,6 +12,12 @@
    ./dl_dep_imgs.sh
    ```
 
+3. 下载开源大模型文件
+
+   ```
+   ./dl_ollama_models.sh
+   ```
+
 ### 离线环境
 
 1. 生成dpf-api, dpf-web docker image 文件
@@ -43,12 +49,23 @@
       ./load_docker_img.sh
       ```
 
-   3. 启动 dpf 服务:
+   3. 启动 ollama 服务：
+
+      ```
+      ./start_ollama.sh
+      ```
+
+   4. 启动 dpf 服务:
 
       ```
       docker compose up -d
       ```
 
-4. 备注
+4. 其他
 
    1. 更新 dpf 镜像 仅需执行2.2, 2.3, 2.4即可。
+   2. 升级大模型
+      1. 外网环境下载更新的大模型
+      2. 更新到离线环境 deploy_pkg/ollama内
+      3. 重启 ollama docker容器以生效
+      4. 按需修改dpf内模型配置

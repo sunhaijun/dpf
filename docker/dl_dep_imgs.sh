@@ -28,6 +28,7 @@ images=(
     "ubuntu/squid:latest"
     "semitechnologies/weaviate:1.19.0"
     "nginx:latest"
+    "ollama/ollama"
     # "certbot/certbot"
     # "langgenius/qdrant:v1.7.3"
     # "pgvector/pgvector:pg16"
